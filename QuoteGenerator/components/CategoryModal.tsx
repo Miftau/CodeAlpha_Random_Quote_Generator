@@ -23,7 +23,7 @@ export default function CategoryModal({ visible, onClose, onSelect }: Props) {
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <SafeAreaView className="-1 bg-black/50 justify-end">
+      <SafeAreaView className="flex-1 bg-black/50 justify-end">
         <View className={`rounded-t-3xl p-6 ${
           isDark ? 'bg-gray-800' : 'bg-white'
         }`}>

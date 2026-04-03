@@ -11,14 +11,12 @@ export default function NewQuoteButton({ onPress }: Props) {
   return (
     <TouchableOpacity
       onPress={onPress}
-      className={`flex-row items-center justify-center gap-2 py-3 px-6 rounded-xl ${
-        isDark ? 'bg-gray-700' : 'bg-gray-200'
-      }`}
+      className={`flex-row items-center justify-center gap-2 py-3 px-6 rounded-xl ${isDark ? 'bg-gray-700' : 'bg-gray-200'
+        }`}
     >
-      <Ionicons name="refresh" size={20} className={`${isDark ? 'text-white' : 'text-gray-800'}`} />
-      <Text className={`font-medium ${
-        isDark ? 'text-white' : 'text-gray-800'
-      }`}>
+      <Ionicons name="refresh" size={20} color={`${isDark ? 'text-white' : 'text-gray-800'}`} />
+      <Text className={`font-medium ${isDark ? 'text-white' : 'text-gray-800'
+        }`}>
         New Quote
       </Text>
     </TouchableOpacity>

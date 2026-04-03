@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, useColorScheme } from 'react-native';
+import { View, Text, useColorScheme, ActivityIndicator } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import QuoteCard from '../../components/QuoteCard';
@@ -13,23 +13,20 @@ export default function QuoteScreen() {
 
   if (loading) {
     return (
-      <SafeAreaView className={`flex-1 justify-center items-center ${
-        isDark ? 'bg-gray-900' : 'bg-gray-50'
-      }`}>
-        <View className="items-center space-y-4">
-          <View className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
-          <Text className={`text-lg ${
-            isDark ? 'text-gray-300' : 'text-gray-700'
-          }`}>Fetching wisdom...</Text>
+      <SafeAreaView className={`flex-1 justify-center items-center ${isDark ? 'bg-gray-900' : 'bg-gray-50'
+        }`}>
+        <View className="items-center">
+          <ActivityIndicator size="large" color="#3B82F6" />
+          <Text className={`text-lg mt-4 ${isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}>Fetching wisdom...</Text>
         </View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView className={`flex-1 justify-center items-center p-4 ${
-      isDark ? 'bg-gray-900' : 'bg-gray-50'
-    }`}>
+    <SafeAreaView className={`flex-1 justify-center items-center p-4 ${isDark ? 'bg-gray-900' : 'bg-gray-50'
+      }`}>
       <View className="w-full max-w-md">
         {quote && (
           <QuoteCard
@@ -49,10 +46,9 @@ export default function QuoteScreen() {
       />
 
       <View className="mt-8">
-        <Text className={`text-center text-sm ${
-          isDark ? 'text-gray-500' : 'text-gray-400'
-        }`}>
-          Powered by Quotable API • {quote?.tags.length} categories
+        <Text className={`text-center text-sm ${isDark ? 'text-gray-500' : 'text-gray-400'
+          }`}>
+          Powered by Quotes API • {quote?.tags.length} categories
         </Text>
       </View>
     </SafeAreaView>
