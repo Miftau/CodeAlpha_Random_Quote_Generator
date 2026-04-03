@@ -16,14 +16,14 @@ export const fetchRandomQuote = async (params: Record<string, string> = {}): Pro
     const res = await fetch("https://dummyjson.com/quotes/random", {
       signal: controller.signal,
     });
-    
+
     clearTimeout(timeoutId);
-    
+
     if (!res.ok) throw new Error("Failed to fetch quote");
-    
+
     const data = await res.json();
-    
-    // Map DummyJSON response format to our Quote interface
+
+    // Map DummyJSON response format to Quote interface
     return {
       _id: data.id.toString(),
       content: data.quote,
